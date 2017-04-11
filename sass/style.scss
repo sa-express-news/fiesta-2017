@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Sanchez');
+@import './mixins.scss';
+
+$black: rgba(34, 34, 34, 1);
+$white: #FFF;
+$blue: rgba(22, 144, 202, 1);
+$red: #D45A6E;
+$green: #79C69F;
+
+nav.fiesta {
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(22, 144, 202, 0.65) 0%, rgba(22, 144, 202, 0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  color: $black;
+  font-family: 'Sanchez', serif;
+
+  hr {
+  	border: none;
+  	display: inline-block;
+  	background: $black;
+  	margin-bottom: 5px;
+  }
+
+  .logo {
+    padding: 15px 1% 15px 2%;
+    display: inline-block;
+  }
+
+  .title {
+  	padding: 15px 2% 15px 1%;
+  	font-size: 2em;
+    display: inline-block;
+  }
+
+  .social {
+    padding: 15px 2%;
+    display: inline-block;
+    float: right;
+
+    a {
+      text-decoration: none;
+
+      i {
+          color: $black;
+          padding-left: 10px;
+          font-size: 20px;
+          display: inline-block;
+      }
+    }
+  }
+}
+
+header.fiesta {
+	width: 100%;
+	max-width: 1200px;
+	margin-top: 100px;
+
+	.slideshow-buttons { display: none; }
+
+	.slideshow {
+		width: 70%;
+		display: none;
+
+		@include breakpoint(tablet) {
+			display: inline-block;
+		}
+
+		.slide {
+      width: 100%;
+      height: 300px;
+      background: red;
+    }
+    .slide:nth-child(2) { background: blue; }
+    .slide:nth-child(3) { background: yellow; }
+    .slide:nth-child(4) { background: orange; }
+    .slide:nth-child(5) { background: green; }
+	}
+}
