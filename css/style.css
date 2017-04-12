@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Sanchez");
+body {
+  padding: 0;
+  margin: 0; }
+
 nav.fiesta {
   width: 100%;
+  margin: 0 auto;
   background: linear-gradient(to bottom, rgba(22, 144, 202, 0.65) 0%, rgba(22, 144, 202, 0) 100%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
   display: block;
   color: #222222;
   font-family: 'Sanchez', serif; }
@@ -19,7 +20,7 @@ nav.fiesta {
     display: inline-block; }
   nav.fiesta .title {
     padding: 15px 2% 15px 1%;
-    font-size: 2em;
+    font-size: 1.8em;
     display: inline-block; }
   nav.fiesta .social {
     padding: 15px 2%;
@@ -36,24 +37,37 @@ nav.fiesta {
 header.fiesta {
   width: 100%;
   max-width: 1200px;
-  margin-top: 100px; }
-  header.fiesta .slideshow-buttons {
-    display: none; }
-  header.fiesta .slideshow {
+  margin: 0 auto; }
+  header.fiesta .slideshow-wrapper {
     width: 70%;
     display: none; }
     @media (min-width: 500px) {
-      header.fiesta .slideshow {
+      header.fiesta .slideshow-wrapper {
         display: inline-block; } }
-    header.fiesta .slideshow .slide {
+    header.fiesta .slideshow-wrapper .slideshow-buttons {
+      display: none; }
+    header.fiesta .slideshow-wrapper .slideshow {
       width: 100%;
-      height: 300px;
-      background: red; }
-    header.fiesta .slideshow .slide:nth-child(2) {
-      background: blue; }
-    header.fiesta .slideshow .slide:nth-child(3) {
-      background: yellow; }
-    header.fiesta .slideshow .slide:nth-child(4) {
-      background: orange; }
-    header.fiesta .slideshow .slide:nth-child(5) {
-      background: green; }
+      height: 100%;
+      visibility: hidden; }
+      header.fiesta .slideshow-wrapper .slideshow .slide {
+        width: 100%;
+        height: 400px;
+        background: red; }
+      header.fiesta .slideshow-wrapper .slideshow .slide:nth-child(2) {
+        background: blue; }
+      header.fiesta .slideshow-wrapper .slideshow .slide:nth-child(3) {
+        background: yellow; }
+      header.fiesta .slideshow-wrapper .slideshow .slide:nth-child(4) {
+        background: orange; }
+      header.fiesta .slideshow-wrapper .slideshow .slide:nth-child(5) {
+        background: green; }
+  header.fiesta .schedule {
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    position: relative; }
+    @media (min-width: 500px) {
+      header.fiesta .schedule {
+        width: 29%;
+        left: -1%; } }
