@@ -1,0 +1,141 @@
+/* 
+
+	Article Body CSS
+
+*/
+
+.article-sections {
+	background:url('/../../img/utils/triple_rule.png') 0 50% repeat-x;
+	padding-bottom:20px;
+}
+
+.article-sections  img{
+	width:100%;
+	margin-bottom: 16px;
+}
+
+.article-sections .column-wrap{
+	float: left;
+	width:100%;
+}
+.article-sections .column{
+	float: left;
+	width:42.8%;
+}
+@media screen and (max-width: 360px){
+	.article-sections {background:none;}
+	.article-sections .column-wrap-last {background: url('/../../img/utils/triple_rule.png') top left repeat-x};
+}
+.article-sections .odd{
+	margin:20px 0 20px 0;
+	padding:0 18px 0 0;
+	clear:left;
+	background:url('/../../img/utils/rule_1x1_ddd.png') top right repeat-y;
+}
+.article-sections .even{
+	margin:20px 0 20px 0;
+	padding:0 0 0 18px;
+}
+.article-sections .header {
+	padding: 10px 0 12px 0;
+	margin: 0 0 28px 0;
+	border-bottom: 1px solid #DDD;
+	width: 100%;
+}
+
+.article-sections h2.headline  {
+	font-size: 16px;
+	margin-bottom: 0;
+	line-height: 1.2em;
+}
+@media screen and (min-width: 480px){
+	.article-sections .odd,
+	.article-sections .even{
+		margin:27px 0 27px 0;
+	}
+		.article-sections .column{
+		float: left;
+		width:45.8%;
+	}
+}
+@media screen and (min-width: 768px){
+	.article-sections {
+		padding-bottom:29px;
+		margin-bottom: 32px;
+		background:url('/../../img/utils/triple_rule.png') bottom left repeat-x;
+	}
+
+	.article-sections h2.headline  {
+		font-size: 20px;
+		margin-bottom: 0;
+		line-height: 1.2em;
+	}
+	.article-sections .column-outer-wrap{
+		float:left;
+		width:100%;
+		background:url('/../../img/utils/rule_1x1_ddd.png') 50% 0 repeat-y;
+	}
+	.article-sections .column-wrap{
+		float: left;
+		width:47.7%;
+		margin-right:15px;
+		background:url('/../../img/utils/rule_1x1_ddd.png') 50% 0 repeat-y;
+	}
+	.article-sections .column-wrap-last{
+		margin-right:0;
+		margin-left:16px;
+		padding-right:0;
+		border-width:0;
+	}
+	.article-sections .column{
+		clear:none;
+		width:45.2%; 
+		float:left;
+		margin-top:0;
+		padding-bottom:0;
+	}
+	.article-sections .odd{
+		padding-right:16px;
+		margin-right:15px; 
+		background:none;
+	}
+	.article-sections .even{
+		padding-left:0;
+	}
+	.article-sections .lastcolumn{
+		padding-right: 0;
+		background: none;
+	}
+	.article-sections .firstcolumn{
+		padding-left: 0;
+	}
+}
+@media screen and (min-width: 1024px){
+	.article-sections .column-wrap{
+		width:48.3%
+	}
+	.article-sections .column{
+		width:46.5%;
+	}
+}
+@media screen and (min-width: 1280px){
+	.article-sections {
+		margin-bottom: 40px;
+		padding-bottom: 33px;
+	}
+	.article-sections .column-wrap{
+		width:48%;
+		margin-right:24px;
+	}
+	.article-sections .column-wrap-last{
+		margin-left:24px;
+		margin-right:0;576
+	}
+	.article-sections .column{
+		width:45.8%; 
+	}
+	.article-sections .odd{
+		padding-right:24px;
+		margin-right:24px; 
+	}
+}

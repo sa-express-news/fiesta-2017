@@ -1,42 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=Sanchez');
+@import url('https://fonts.googleapis.com/css?family=Eczar');
 @import './mixins.scss';
 
 $black: rgba(34, 34, 34, 1);
 $white: #FFF;
 $blue: rgba(22, 144, 202, 1);
 $fadingBlue: rgba(22, 144, 202, 0.65);
-$red: #D45A6E;
-$green: #79C69F;
+$red: rgba(215, 25, 33, 1);
+$green: rgba(0, 166, 81, 1);
+$yellow: rgba(243, 189, 12, 1);
+$purple: rgba(150, 74, 116, 1);
 
 body {
   padding: 0;
   margin: 0;
+  background: #fff;
 }
 
 nav.fiesta {
 	width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to bottom, $fadingBlue 0%, rgba(22, 144, 202, 0) 100%);
   display: block;
   color: $black;
-  font-family: 'Sanchez', serif;
+  font-family: 'Eczar', serif;
 
   hr {
   	border: none;
   	display: inline-block;
-  	background: $black;
-  	margin-bottom: 5px;
+  	background: $green;
+  	margin-bottom: 10px;
+  	height: 15px;
+  	width: 1px;
   }
 
   .logo {
-    padding: 15px 1% 15px 2%;
+    padding: 10px 1% 0 0;
     display: inline-block;
+	  img {
+	  	width: 100%;
+	    height: auto;
+	  }
   }
 
   .title {
-  	padding: 15px 2% 15px 1%;
+  	padding: 0 2% 0 1%;
   	font-size: 1.8em;
     display: inline-block;
+    color: $blue;
+    position: relative;
+    top: -8px;
   }
 
   .social {
@@ -48,12 +59,15 @@ nav.fiesta {
       text-decoration: none;
 
       i {
-          color: $black;
+          color: $green;
           padding-left: 10px;
           font-size: 20px;
           display: inline-block;
       }
     }
+
+    a:nth-child(2) i { color: $yellow; }
+    a:nth-child(3) i { color: $purple; }
   }
 }
 
@@ -61,31 +75,28 @@ header.fiesta {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
+	text-align: center;
+	background: $blue;
 
   .slideshow-wrapper {
-    width: 70%;
+    background: $blue;
+    height: 400px;
+    padding: 4px;
+    padding-right: 0;
+    text-align: right;
     display: none;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       display: inline-block;
     }
 
     .slideshow-buttons { display: none; }
 
   	.slideshow {
-  		width: 100%;
-      height: 100%;
+  		width: 600px;
+      height: 400px;
+    	overflow: hidden;
   		visibility: hidden;
-
-  		.slide {
-        width: 100%;
-        height: 400px;
-        background: red;
-      }
-      .slide:nth-child(2) { background: blue; }
-      .slide:nth-child(3) { background: yellow; }
-      .slide:nth-child(4) { background: orange; }
-      .slide:nth-child(5) { background: green; }
   	}
   }
 
@@ -94,10 +105,105 @@ header.fiesta {
     height: 400px;
     display: inline-block;
     position: relative;
+    background: $blue;
+    padding: 4px;
+    padding-left: 0;
 
-    @include breakpoint(tablet) {
-      width: 29%;
+    @include breakpoint(desktop) {
+      width: calc(100% - 620px);
       left: -1%;
+      top: 4px;
     }
   }
+}
+
+main.fiesta {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	div { display: inline-block; }
+}
+
+div.article-title {
+	width: 100%;
+	margin: 40px 0 10px;
+	font-family: 'Eczar', serif;
+	font-size: 1.6em;
+	color: $blue;
+
+	@include breakpoint(tablet) {
+  	width: 65%;
+  }
+}
+
+div.hdnce-collection-82368-premium_article_featured_articles {
+	width: 100%;
+  margin: 0 auto;
+  background: none;
+
+  @include breakpoint(tablet) {
+  	width: 65%;
+  }
+
+  div.collection.article-sections .column-outer-wrap {
+  	.column-wrap, .column-wrap.column-wrap-last {
+  		background: none;
+	  	display: inline-block;
+	    width: 100%;
+	    position: relative;
+	    padding: 0;
+	    margin: 0;
+
+    	.column, .column.odd, .column.odd.firstcolumn {
+    		float: left;
+	      width: 100%;
+	      vertical-align: top;
+	      margin: 0 0 50px;
+	      padding: 0;
+
+	      img {
+	      	margin-bottom: 0;
+	      	border: 1px solid $blue;
+	      }
+
+	      h2.headline a, h3.headline a {
+	      	color: $black;
+	      }
+
+	      @include breakpoint(tablet) {
+	        min-height: 330px;
+	        max-height: 330px;
+	        width: 48%;
+	        margin: 0;
+
+	        &:nth-child(2n) {
+	          margin-left: 4%;
+	        }
+	      }
+    	}
+    }
+  }
+}
+
+div.show-us-medals {
+	width: 100%;
+	margin: 0 auto;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	background: white;
+
+	@include breakpoint(tablet) {
+		width: 34%;
+		max-height: 330px;
+		min-height: 330px;
+		overflow: hidden;
+		text-align: right;
+	}
+
+	img {
+		width: 92%;
+		height: auto;
+	}
 }
