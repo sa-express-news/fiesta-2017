@@ -16,6 +16,22 @@ body {
   background: #fff;
 }
 
+div.fiesta-background-images {
+	#pinata {
+		position: absolute;
+		right: 0;
+		top: 200px;
+		z-index: 1000;
+	}
+
+	#shoes {
+		position: absolute;
+		left: -50px;
+		top: 500px;
+		z-index: 1000;
+	}
+}
+
 nav.fiesta {
 	width: 100%;
   margin: 0 auto;
@@ -76,10 +92,10 @@ header.fiesta {
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
-	background: $blue;
+	background: $fadingBlue;
 
   .slideshow-wrapper {
-    background: $blue;
+    background: transparent;
     height: 400px;
     padding: 4px;
     padding-right: 0;
@@ -105,7 +121,7 @@ header.fiesta {
     height: 400px;
     display: inline-block;
     position: relative;
-    background: $blue;
+    background: transparent;
     padding: 4px;
     padding-left: 0;
 
@@ -117,17 +133,17 @@ header.fiesta {
   }
 }
 
-main.fiesta {
+div.fiesta-header-spacer {
 	width: 100%;
 	max-width: 1200px;
-	margin: 0 auto;
-
-	div { display: inline-block; }
+	height: 20px;
+	margin: 20px auto 0;
+	background: url('http://ww1.hdnux.com/photos/60/40/52/12716672/4/rawImage.jpg') transparent repeat-x 0 0;
 }
 
 div.article-title {
 	width: 100%;
-	margin: 40px 0 10px;
+	margin: 20px 0 10px;
 	font-family: 'Eczar', serif;
 	font-size: 1.6em;
 	color: $blue;
@@ -142,7 +158,7 @@ div.hdnce-collection-82368-premium_article_featured_articles {
   margin: 0 auto;
   background: none;
 
-  @include breakpoint(tablet) {
+  @include breakpoint(desktop) {
   	width: 65%;
   }
 
@@ -186,24 +202,45 @@ div.hdnce-collection-82368-premium_article_featured_articles {
   }
 }
 
-div.show-us-medals {
+div.medal-wrap {
 	width: 100%;
-	margin: 0 auto;
+	margin: 20px 0 0;
 	display: inline-block;
 	vertical-align: top;
-	text-align: center;
-	background: white;
 
-	@include breakpoint(tablet) {
-		width: 34%;
-		max-height: 330px;
-		min-height: 330px;
-		overflow: hidden;
-		text-align: right;
+	@include breakpoint(desktop) {
+  	width: 32%;
+  	margin-left: 2%;
+  	margin-top: 0;
+  	position: relative;
+  	top: -32px;
+  }
+
+	.medals-title {
+		width: 100%;
+		font-family: 'Eczar', serif;
+		font-size: 1.6em;
+		color: $red;
+		margin-bottom: 10px;
 	}
 
-	img {
-		width: 92%;
-		height: auto;
+	.show-us-medals {
+		width: calc(100% - 2px);
+		margin: 0 auto;
+		text-align: center;
+		background: $white;
+
+		@include breakpoint(desktop) {
+			max-height: 330px;
+			min-height: 330px;
+			overflow: hidden;
+			text-align: right;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border: 1px solid $red;
+		}
 	}
 }

@@ -4,6 +4,18 @@ body {
   margin: 0;
   background: #fff; }
 
+div.fiesta-background-images #pinata {
+  position: absolute;
+  right: 0;
+  top: 200px;
+  z-index: 1000; }
+
+div.fiesta-background-images #shoes {
+  position: absolute;
+  left: -50px;
+  top: 500px;
+  z-index: 1000; }
+
 nav.fiesta {
   width: 100%;
   margin: 0 auto;
@@ -51,9 +63,9 @@ header.fiesta {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  background: #1690ca; }
+  background: rgba(22, 144, 202, 0.65); }
   header.fiesta .slideshow-wrapper {
-    background: #1690ca;
+    background: transparent;
     height: 400px;
     padding: 4px;
     padding-right: 0;
@@ -74,7 +86,7 @@ header.fiesta {
     height: 400px;
     display: inline-block;
     position: relative;
-    background: #1690ca;
+    background: transparent;
     padding: 4px;
     padding-left: 0; }
     @media (min-width: 768px) {
@@ -83,16 +95,16 @@ header.fiesta {
         left: -1%;
         top: 4px; } }
 
-main.fiesta {
+div.fiesta-header-spacer {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; }
-  main.fiesta div {
-    display: inline-block; }
+  height: 20px;
+  margin: 20px auto 0;
+  background: url("http://ww1.hdnux.com/photos/60/40/52/12716672/4/rawImage.jpg") transparent repeat-x 0 0; }
 
 div.article-title {
   width: 100%;
-  margin: 40px 0 10px;
+  margin: 20px 0 10px;
   font-family: 'Eczar', serif;
   font-size: 1.6em;
   color: #1690ca; }
@@ -104,7 +116,7 @@ div.hdnce-collection-82368-premium_article_featured_articles {
   width: 100%;
   margin: 0 auto;
   background: none; }
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     div.hdnce-collection-82368-premium_article_featured_articles {
       width: 65%; } }
   div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap, div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap.column-wrap-last {
@@ -134,20 +146,36 @@ div.hdnce-collection-82368-premium_article_featured_articles {
           div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap .column:nth-child(2n), div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap .column.odd:nth-child(2n), div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap .column.odd.firstcolumn:nth-child(2n), div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap.column-wrap-last .column:nth-child(2n), div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap.column-wrap-last .column.odd:nth-child(2n), div.hdnce-collection-82368-premium_article_featured_articles div.collection.article-sections .column-outer-wrap .column-wrap.column-wrap-last .column.odd.firstcolumn:nth-child(2n) {
             margin-left: 4%; } }
 
-div.show-us-medals {
+div.medal-wrap {
   width: 100%;
-  margin: 0 auto;
+  margin: 20px 0 0;
   display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  background: white; }
-  @media (min-width: 500px) {
-    div.show-us-medals {
-      width: 34%;
-      max-height: 330px;
-      min-height: 330px;
-      overflow: hidden;
-      text-align: right; } }
-  div.show-us-medals img {
-    width: 92%;
-    height: auto; }
+  vertical-align: top; }
+  @media (min-width: 768px) {
+    div.medal-wrap {
+      width: 32%;
+      margin-left: 2%;
+      margin-top: 0;
+      position: relative;
+      top: -32px; } }
+  div.medal-wrap .medals-title {
+    width: 100%;
+    font-family: 'Eczar', serif;
+    font-size: 1.6em;
+    color: #d71921;
+    margin-bottom: 10px; }
+  div.medal-wrap .show-us-medals {
+    width: calc(100% - 2px);
+    margin: 0 auto;
+    text-align: center;
+    background: #FFF; }
+    @media (min-width: 768px) {
+      div.medal-wrap .show-us-medals {
+        max-height: 330px;
+        min-height: 330px;
+        overflow: hidden;
+        text-align: right; } }
+    div.medal-wrap .show-us-medals img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #d71921; }

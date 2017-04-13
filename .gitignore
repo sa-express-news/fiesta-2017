@@ -57,6 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
-unused-media/
+not_for_git/
 
 .DS_Store
