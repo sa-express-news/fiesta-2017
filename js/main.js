@@ -15,11 +15,20 @@
       };
     },
 
+    wrapInMain: function ($, start, end) {
+      // ​$(".start-week").each(function() {
+      //     $(this).nextUntil('.end-week + *').andSelf().wrapAll('<div class="full-week">');
+      // });​​​​​​​​​​​
+
+      $(start).nextUntil(end).andSelf().wrapAll('<main class="fiesta">');
+    },
+
     init: function () {
       var sliderOptions = this.getSliderOptions(),
           that = this;
       if (jQuery) {
         jQuery(function ($) {
+          that.wrapInMain($, '.hdnce-item-78796', '.hdnce-item-78734');
           $('.slideshow').horizontalSlider(sliderOptions);
         });
       }

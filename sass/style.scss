@@ -141,12 +141,19 @@ div.fiesta-header-spacer {
 	background: url('http://ww1.hdnux.com/photos/60/40/52/12716672/4/rawImage.jpg') transparent repeat-x 0 0;
 }
 
+main.fiesta {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 div.article-title {
 	width: 100%;
 	margin: 20px 0 10px;
 	font-family: 'Eczar', serif;
 	font-size: 1.6em;
 	color: $blue;
+	display: inline-block;
 
 	@include breakpoint(tablet) {
   	width: 65%;
@@ -157,52 +164,69 @@ div.hdnce-collection-82368-premium_article_featured_articles {
 	width: 100%;
   margin: 0 auto;
   background: none;
+  display: inline-block;
 
   @include breakpoint(desktop) {
   	width: 65%;
   }
 
-  div.collection.article-sections .column-outer-wrap {
-  	.column-wrap, .column-wrap.column-wrap-last {
+  div { display: inline-block; }
+
+  div.collection.article-sections {
+  	background: none;
+  	padding-bottom: 0;
+  	margin-bottom: 0;
+
+  	.odd, .even {
   		background: none;
-	  	display: inline-block;
-	    width: 100%;
-	    position: relative;
-	    padding: 0;
-	    margin: 0;
+  	}
 
-    	.column, .column.odd, .column.odd.firstcolumn {
-    		float: left;
-	      width: 100%;
-	      vertical-align: top;
-	      margin: 0 0 50px;
-	      padding: 0;
+  	.column-outer-wrap {
+  		background: none;
 
-	      img {
-	      	margin-bottom: 0;
-	      	border: 1px solid $blue;
-	      }
+	  	.column-wrap, .column-wrap.column-wrap-last {
+	  		background: none;
+		  	display: inline-block;
+		    width: 100%;
+		    position: relative;
+		    padding: 0;
+		    margin: 0;
 
-	      h2.headline a, h3.headline a {
-	      	color: $black;
-	      }
+	    	.column, .column.odd, .column.odd.firstcolumn {
+	    		float: left;
+		      width: 100%;
+		      vertical-align: top;
+		      margin: 0 0 50px;
+		      padding: 0;
 
-	      @include breakpoint(tablet) {
-	        min-height: 330px;
-	        max-height: 330px;
-	        width: 48%;
-	        margin: 0;
+		      .header { display: none; }
 
-	        &:nth-child(2n) {
-	          margin-left: 4%;
-	        }
-	      }
-    	}
-    }
+		      img {
+		      	margin-bottom: 0;
+		      	border: 1px solid $blue;
+		      }
+
+		      h2.headline a, h3.headline a {
+		      	color: $black;
+		      }
+
+		      @include breakpoint(tablet) {
+		        min-height: 330px;
+		        max-height: 330px;
+		        width: 48%;
+		        margin: 0;
+
+		        &:nth-child(2n) {
+		          margin-left: 4%;
+		        }
+		      }
+	    	}
+	    }
+	  }
   }
 }
 
-div.medal-wrap {
+div.hdnce-item-78797 {
 	width: 100%;
 	margin: 20px 0 0;
 	display: inline-block;
@@ -216,7 +240,36 @@ div.medal-wrap {
   	top: -32px;
   }
 
-	.medals-title {
+  .competition-wrapper, .medals-wrapper {
+  	width: 100%;
+  	margin: 0;
+  	display: inline-block;
+
+  	@include breakpoint(tablet) {
+	  	width: 48%;
+	  }
+
+	  @include breakpoint(desktop) {
+	  	width: 100%;
+  	}
+	}
+
+  .medals-wrapper { 
+  	margin-top: 40px;
+  	vertical-align: top;
+
+  	@include breakpoint(tablet) {
+  		margin-top: 0;
+  		margin-left: 2%;
+  	}
+
+  	@include breakpoint(desktop) {
+  		margin-top: 40px;
+  		margin-left: 0;
+  	}
+  }
+
+	.medals-title, .competition-title {
 		width: 100%;
 		font-family: 'Eczar', serif;
 		font-size: 1.6em;
@@ -224,17 +277,18 @@ div.medal-wrap {
 		margin-bottom: 10px;
 	}
 
-	.show-us-medals {
+	.competition-title { color: $green; }
+
+	.show-us-medals, .competition {
 		width: calc(100% - 2px);
 		margin: 0 auto;
-		text-align: center;
+		text-align: left;
 		background: $white;
 
 		@include breakpoint(desktop) {
 			max-height: 330px;
 			min-height: 330px;
 			overflow: hidden;
-			text-align: right;
 		}
 
 		img {
@@ -243,4 +297,35 @@ div.medal-wrap {
 			border: 1px solid $red;
 		}
 	}
+
+	.competition img { border: 1px solid $green; }
+}
+
+div.hdnce-item-78844 {
+	width: 100%;
+	margin: 20px 0;
+	display: inline-block;
+
+	@include breakpoint(desktop) {
+  	width: 65%;
+  	position: relative;
+  	top: -100px;
+  }
+
+  .hashtag-title {
+		width: 100%;
+		font-family: 'Eczar', serif;
+		font-size: 1.6em;
+		color: $purple;
+		margin-bottom: 10px;
+	}
+
+  ul.juicer-feed {
+  	width: 100%;
+  	height: auto;
+
+  	h1.referral {
+  		display: none;
+  	}
+  }
 }
