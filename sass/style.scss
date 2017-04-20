@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Eczar');
 @import './mixins.scss';
+@import './calendar.scss';
 
 $black: rgba(34, 34, 34, 1);
 $white: #FFF;
 $blue: rgba(22, 144, 202, 1);
 $fadingBlue: rgba(22, 144, 202, 0.65);
 $red: rgba(215, 25, 33, 1);
+$redShadow: rgba(86, 9, 12, 0.5);
 $green: rgba(0, 166, 81, 1);
 $yellow: rgba(243, 189, 12, 1);
 $purple: rgba(150, 74, 116, 1);
@@ -17,6 +19,8 @@ body {
 }
 
 div.fiesta-background-images {
+	display: none;
+
 	#pinata {
 		position: absolute;
 		right: 0;
@@ -30,11 +34,16 @@ div.fiesta-background-images {
 		top: 500px;
 		z-index: 1000;
 	}
+
+	@include breakpoint(desktop) {
+		display: block;
+	}
 }
 
 nav.fiesta {
 	width: 100%;
-  margin: 0 auto;
+	height: 69px;
+  margin: 0 auto 20px;
   display: block;
   color: $black;
   font-family: 'Eczar', serif;
@@ -43,13 +52,13 @@ nav.fiesta {
   	border: none;
   	display: inline-block;
   	background: $green;
-  	margin-bottom: 10px;
-  	height: 15px;
+  	margin-bottom: 20px;
+  	height: 20px;
   	width: 1px;
   }
 
   .logo {
-    padding: 10px 1% 0 0;
+    padding: 0 1% 0 0;
     display: inline-block;
 	  img {
 	  	width: 100%;
@@ -61,15 +70,31 @@ nav.fiesta {
   	padding: 0 2% 0 1%;
   	font-size: 1.8em;
     display: inline-block;
-    color: $blue;
-    position: relative;
-    top: -8px;
+    color: $red;
+    vertical-align: middle;
+    height: 100%;
+
+    @include breakpoint(desktop) {
+    	font-size: 2.6em;
+    }
+
+    a {
+    	text-decoration: none;
+    	color: $red;
+    	text-shadow: $redShadow 1px 2px 4px;
+
+    	&:hover, &:visited, &:active { color: $red; }
+    }
   }
 
   .social {
-    padding: 15px 2%;
-    display: inline-block;
+    padding: 25px 2%;
+    display: none;
     float: right;
+
+    @include breakpoint(desktop) {
+    	display: inline-block;
+    }
 
     a {
       text-decoration: none;
@@ -121,14 +146,19 @@ header.fiesta {
     height: 400px;
     display: inline-block;
     position: relative;
-    background: transparent;
     padding: 4px;
     padding-left: 0;
+    background: url('http://ww1.hdnux.com/photos/60/44/35/12732284/4/rawImage.jpg') transparent no-repeat center center;
 
     @include breakpoint(desktop) {
       width: calc(100% - 620px);
-      left: -1%;
       top: 4px;
+    }
+
+    a {
+    	display: block;
+    	height: 100%;
+    	text-decoration: none;
     }
   }
 }
@@ -151,9 +181,17 @@ div.article-title {
 	width: 100%;
 	margin: 20px 0 10px;
 	font-family: 'Eczar', serif;
-	font-size: 1.6em;
+	font-size: 1.9em;
 	color: $blue;
 	display: inline-block;
+
+	@include breakpoint(desktop) {
+		font-size: 1.7em;
+	}
+
+	@include breakpoint(wide) {
+		font-size: 1.9em;
+	}
 
 	@include breakpoint(tablet) {
   	width: 65%;
@@ -208,6 +246,7 @@ div.hdnce-collection-82368-premium_article_featured_articles {
 
 		      h2.headline a, h3.headline a {
 		      	color: $black;
+		      	font-family: serif;
 		      }
 
 		      @include breakpoint(tablet) {
@@ -272,9 +311,17 @@ div.hdnce-item-78797 {
 	.medals-title, .competition-title {
 		width: 100%;
 		font-family: 'Eczar', serif;
-		font-size: 1.6em;
+		font-size: 1.9em;
 		color: $red;
 		margin-bottom: 10px;
+
+		@include breakpoint(desktop) {
+			font-size: 1.7em;
+		}
+
+		@include breakpoint(wide) {
+			font-size: 1.9em;
+		}
 	}
 
 	.competition-title { color: $green; }
@@ -315,7 +362,7 @@ div.hdnce-item-78844 {
   .hashtag-title {
 		width: 100%;
 		font-family: 'Eczar', serif;
-		font-size: 1.6em;
+		font-size: 1.9em;
 		color: $purple;
 		margin-bottom: 10px;
 	}
